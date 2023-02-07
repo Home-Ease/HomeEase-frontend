@@ -1,0 +1,29 @@
+.images{
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    /* color: white; */
+  }
+  .centered {
+    margin-left: 10em;
+     padding-top: 90px; 
+   
+    /* transform: translate(-50%, -50%); */
+    color: rgb(75, 74, 74);
+   
+  }
+  .selfieGuy{
+    width: 40vw;
+    padding-right: 20px;
+  }
+.girl{
+    width: 40vw;
+}
