@@ -2,7 +2,7 @@ import React from 'react'
 import homeEase1 from "../img1.png"
 import homeEase2 from "../realtor.png"
 import '../landingPage.css'
-import Searchbox from './Searchbox'
+import Searchbox from '../components/Searchbox'
 const LandingPage = () => {
   return (
     <>
