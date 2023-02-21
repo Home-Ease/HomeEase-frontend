@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import Properties from './pages/Properties';
+import House from './components/House';
 
 interface propertiesContextValue {
   searchLocation: string |number | undefined,
@@ -44,6 +45,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<LandingPage />}/>
                 <Route path="properties" element={<Properties />}/>
+                <Route path='house/:id' element={<House />} />
             </Routes>
         </BrowserRouter>
       </propertiesContext.Provider>

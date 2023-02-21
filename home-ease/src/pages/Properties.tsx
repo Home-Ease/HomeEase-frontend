@@ -2,11 +2,12 @@ import React from 'react'
 import axios from 'axios';
 import { useState, useEffect, useContext } from 'react'
 import { propertiesContext } from '../App';
-
-
+import Property from '../components/Property';
+import { Link} from 'react-router-dom';
+import House from '../components/House';
 const Properties = () => {
   const {minPrice, maxPrice, searchLocation} = useContext(propertiesContext);
-  interface Property {
+  interface propertyObj {
     id: number;
     houseNumber: number;
     streetName: string,
@@ -15,7 +16,7 @@ const Properties = () => {
     state: string,
     zip: number
   }
-  let [displayProperties, setProperties] = useState<Property[]>([])
+  let [displayProperties, setProperties] = useState<propertyObj[]>([])
 
   useEffect(()=>{
     async function searchProperties() {
@@ -29,18 +30,15 @@ const Properties = () => {
   },[])
   
   return (
-    <div>
-      {displayProperties.map((property) => (
-        <div key={property.id} style={{ display: 'flex', marginBottom: '20px' }}>
-          <img src={'../img1.png'} alt={property.streetName} style={{ marginRight: '20px', width: '400px' }} />
-          <div>
-            <h2 style={{ marginBottom: '10px' }}>{property.streetName}</h2>
-            <p style={{ marginBottom: '10px' }}>{property.city}</p>
-            <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>{`$${property.price} / night`}</p>
-            <button style={{ backgroundColor: '#ff5a5f', color: '#fff', border: 'none', padding: '10px 20px' }}>Book now</button>
-          </div>
-        </div>
+    <div className='pt-3 sm:pt-7'>
+       <div className='grid sm:grid-cols-2 md:grid-cols-3 lg: lg:grid-cols-4 xl:grid-cols-4 gap-4'>{displayProperties.map((property) => (
+        <Link to={`/house/${property.id}`}><Property key={property.id}
+          title={property.streetName} 
+          image='../assets/house.jpg' 
+          price={property.price}
+        /></Link>
       ))}
+      </div>
     </div>
   )
 }
