@@ -5,9 +5,9 @@ import Searchbox from '../components/Searchbox'
 const LandingPage = () => {
   return (
     <>
-        <h1 className='centered'>The easiest way to buy & sell houses</h1>
-        <div className="container">
-            <Searchbox />
+        <h1 className='flex items-center justify-center mt-36 text-2xl centered'>The easiest way to buy & sell houses</h1>
+        <div className="mt-8 container">
+            < Searchbox />
             <div className='images'>
               {/* <img src={homeEase1} alt="" className='girl'/> */}
               <img src={homeEase2} alt="" className='selfieGuy'/>

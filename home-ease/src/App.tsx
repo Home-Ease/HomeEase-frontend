@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import Properties from './pages/Properties';
 import House from './components/House';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import SellProperty from './pages/SellProperty';
 
 interface propertiesContextValue {
   searchLocation: string |number | undefined,
@@ -21,7 +24,6 @@ export const propertiesContext = createContext<propertiesContextValue>({
   setMinPrice: () => {},
   setMaxPrice: () => {}
 })
-
 
 function App() {
   const [searchLocation,setSearchLocation] = useState<string|number|undefined>('')
@@ -46,6 +48,9 @@ function App() {
                 <Route path="/" element={<LandingPage />}/>
                 <Route path="properties" element={<Properties />}/>
                 <Route path='house/:id' element={<House />} />
+                <Route path='login' element={<Login />} />
+                <Route path='register' element={<Signup />} />
+                <Route path='sell' element={<SellProperty />} />
             </Routes>
         </BrowserRouter>
       </propertiesContext.Provider>

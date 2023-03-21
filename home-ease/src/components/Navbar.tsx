@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [active, setActive] = useState("nav__menu");
@@ -16,25 +17,25 @@ function Navbar() {
   };
   return (
     <nav className="nav">
-      <a href="#" className="nav__brand">
+      <a href="/" className="nav__brand font-bold text-4xl">
         HomeEase
       </a>
       <div id="navMenu">
         <ul className={active}>
             <li className="nav__item">
-            <a href="#" className="nav__link">
+            <a href="#" className="nav__link font-semibold">
                 Buy
             </a>
             </li>
             <li className="nav__item">
-            <a href="#" className="nav__link">
+            <a href="/sell" className="nav__link font-semibold">
                 Sell
             </a>
             </li>
             <li className="nav__item">
-            <a href="#" className="nav__link">
-                Sign In / Register
-            </a>
+            <a href="/login" className="nav__link font-semibold">
+                Login/Signup
+              </a>
             </li>
         </ul>
       </div>
